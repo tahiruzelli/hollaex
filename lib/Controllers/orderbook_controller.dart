@@ -1,31 +1,43 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hollaex/Globals/Constans/urls.dart';
 import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class OrderBookController extends GetxController {
   IOWebSocketChannel hollaExChannel;
   TextEditingController controller = TextEditingController();
+  RxInt filterIndex = 0.obs;
+  var orderBook;
   @override
   void onInit() {
     // TODO: implement onInit
     super.onInit();
     hollaExChannel = WebSocketChannel.connect(
-      Uri.parse('wss://api.hollaex.com/stream'),
+      Uri.parse(urlStreamChannel),
     );
-    hollaExChannel.sink.add('{"op": "subscribe","args": ["orderbook:xht-usdt"]}');
+    hollaExChannel.sink.add(orderBookPayload);
+    keepConnectionAlive();
   }
 
-  void sendMessage() {
-    if (controller.text.isNotEmpty) {
-      hollaExChannel.sink.add(controller.text);
-    }
+  void sendPing() {
+    hollaExChannel.sink.add(pingPayload);
+    print('ping sended');
+  }
+
+  void keepConnectionAlive() {
+    Future.delayed(const Duration(seconds: 30)).then((value) {
+      sendPing();
+      keepConnectionAlive();
+    });
   }
 
   @override
-  void dispose() {
+  void onClose() {
+    // TODO: implement onClose
+    super.onClose();
     hollaExChannel.sink.close();
     controller.dispose();
-    super.dispose();
   }
 }

@@ -37,10 +37,10 @@ class Data {
 
   Data.fromJson(Map<String, dynamic> json) {
     if (json['bids'] != null) {
-      bids = <Bids>[];
-      json['bids'].forEach((v) {
-        bids.add(Bids.fromJson(v));
-      });
+      List bids = <Bids>[];
+      for (int i = 0; i < json['bids'].length; i++) {
+        bids.add(Bids.fromJson(json['bids'][i]));
+      }
     }
     if (json['asks'] != null) {
       asks = <Asks>[];
@@ -66,7 +66,7 @@ class Data {
 
 class Bids {
   double price;
-  int piece;
+  double piece;
 
   Bids({this.price, this.piece});
 

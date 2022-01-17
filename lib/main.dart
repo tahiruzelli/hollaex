@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
     const title = 'WebSocket Demo';
     return GetMaterialApp(
       title: title,
+      
       home: OrderBooksView(),
     );
   }
