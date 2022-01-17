@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hollaex/Controllers/main_controller.dart';
 import 'package:hollaex/Controllers/orderbook_controller.dart';
 import 'package:hollaex/Globals/Constans/colors.dart';
+import 'package:hollaex/Globals/Theme/theme.dart';
 
 class TopFilter extends StatelessWidget {
   OrderBookController orderBookController = Get.find();
+  MainController mainController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          'Order Book',
-          style: GoogleFonts.poppins(
-            color: colorWhite,
-            fontSize: 15,
-            fontWeight: FontWeight.bold,
+        Obx(
+          () => Text(
+            'Order Book',
+            style: GoogleFonts.poppins(
+              color: getWhiteBlackTextColor(),
+              fontSize: 15,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         Container(
@@ -33,16 +39,16 @@ class TopFilter extends StatelessWidget {
     );
   }
 
-  Widget unSelectedfilterItem(IconData icon, int index) {
+  Widget unSelectedfilterItem(String iconPath, int index) {
     return GestureDetector(
       onTap: () {
         orderBookController.filterIndex.value = index;
       },
-      child: Icon(icon),
+      child: SvgPicture.asset('assets/icons/$iconPath'),
     );
   }
 
-  Widget selectedFilterItem(IconData icon, int index) {
+  Widget selectedFilterItem(String iconPath, int index) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
@@ -54,17 +60,17 @@ class TopFilter extends StatelessWidget {
           onTap: () {
             orderBookController.filterIndex.value = index;
           },
-          child: Icon(icon),
+          child: SvgPicture.asset('assets/icons/$iconPath'),
         ),
       ),
     );
   }
 
-  Widget filterItem(int index, IconData icon) {
+  Widget filterItem(int index, String iconPath) {
     if (index == orderBookController.filterIndex.value) {
-      return selectedFilterItem(icon, index);
+      return selectedFilterItem(iconPath, index);
     } else {
-      return unSelectedfilterItem(icon, index);
+      return unSelectedfilterItem(iconPath, index);
     }
   }
 
@@ -73,11 +79,11 @@ class TopFilter extends StatelessWidget {
       () => Row(
         children: [
           const SizedBox(width: 5),
-          filterItem(0, Icons.filter),
+          filterItem(0, 'justify.svg'),
           const SizedBox(width: 10),
-          filterItem(1, Icons.face),
+          filterItem(1, 'orderbuy.svg'),
           const SizedBox(width: 10),
-          filterItem(2, Icons.fact_check_rounded),
+          filterItem(2, 'ordersell.svg'),
           const SizedBox(width: 5),
         ],
       ),

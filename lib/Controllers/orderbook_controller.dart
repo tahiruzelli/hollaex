@@ -8,6 +8,8 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 class OrderBookController extends GetxController {
   IOWebSocketChannel hollaExChannel;
   TextEditingController controller = TextEditingController();
+  final ScrollController priceScrollController = ScrollController();
+  final ScrollController amountScrollController = ScrollController();
   RxInt filterIndex = 0.obs;
   var orderBook;
   @override
