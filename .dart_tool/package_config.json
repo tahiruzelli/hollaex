@@ -38,6 +38,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "crypto",
+      "rootUri": "file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4",
       "packageUri": "lib/",
@@ -64,6 +70,12 @@
     {
       "name": "flutter_test",
       "rootUri": "file:///Users/tahiruzelli/Documents/development/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "get",
+      "rootUri": "file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -146,13 +158,19 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "web_socket_channel",
+      "rootUri": "file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/web_socket_channel-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "hollaex",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.15"
+      "languageVersion": "2.11"
     }
   ],
-  "generated": "2022-01-17T13:03:10.604616Z",
+  "generated": "2022-01-17T13:16:27.404096Z",
   "generator": "pub",
   "generatorVersion": "2.15.1"
 }

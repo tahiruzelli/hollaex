@@ -1,5 +1,5 @@
 hollaex
-2.15
+2.11
 file:///Users/tahiruzelli/Documents/GitHub/hollaex/
 file:///Users/tahiruzelli/Documents/GitHub/hollaex/lib/
 async
@@ -26,6 +26,10 @@ collection
 2.12
 file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0/
 file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0/lib/
+crypto
+2.12
+file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.1/
+file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.1/lib/
 cupertino_icons
 2.12
 file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.4/
@@ -38,6 +42,10 @@ flutter_lints
 2.12
 file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/
 file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-1.0.4/lib/
+get
+2.12
+file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.1/
+file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.1/lib/
 lints
 2.12
 file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1/
@@ -86,6 +94,10 @@ vector_math
 2.14
 file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.1/
 file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/vector_math-2.1.1/lib/
+web_socket_channel
+2.12
+file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/web_socket_channel-2.1.0/
+file:///Users/tahiruzelli/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/web_socket_channel-2.1.0/lib/
 sky_engine
 2.12
 file:///Users/tahiruzelli/Documents/development/flutter/bin/cache/pkg/sky_engine/
