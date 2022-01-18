@@ -65,17 +65,22 @@ class OrderBooksView extends StatelessWidget {
   }
 
   Widget getPages() {
-    return Obx(() {
-      if (orderBookController.filterIndex.value == 0) {
-        return BidsAsksView();
-      } else if (orderBookController.filterIndex.value == 1) {
-        return AsksView();
-      } else if (orderBookController.filterIndex.value == 2) {
-        return BidsView();
-      } else {
-        warningSnackBar('Error', 'Something is wrong. Please restart the app');
-        return Container();
-      }
-    });
+    if (orderBookController.orderBook == null) {
+      return Container();
+    } else {
+      return Obx(() {
+        if (orderBookController.filterIndex.value == 0) {
+          return BidsAsksView();
+        } else if (orderBookController.filterIndex.value == 1) {
+          return AsksView();
+        } else if (orderBookController.filterIndex.value == 2) {
+          return BidsView();
+        } else {
+          warningSnackBar(
+              'Error', 'Something is wrong. Please restart the app');
+          return Container();
+        }
+      });
+    }
   }
 }

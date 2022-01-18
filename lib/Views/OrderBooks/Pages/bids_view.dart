@@ -10,85 +10,65 @@ class BidsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: SizedBox(
-        child: Row(
-          children: [
-            Expanded(
-              child: SizedBox(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'XHT Price',
-                      style: GoogleFonts.poppins(
-                        color: colorGrey,
-                        fontSize: 15,
-                      ),
+      child: GestureDetector(
+        onTap: () {
+          orderBookController.filterIndex.value = 2;
+        },
+        child: SizedBox(
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'XHT Price',
+                    style: GoogleFonts.poppins(
+                      color: colorGrey,
+                      fontSize: 15,
                     ),
-                    Expanded(
-                      child: SizedBox(
-                        child: ListView.builder(
-                          controller: orderBookController.priceScrollController,
-                          itemCount: orderBookController
-                              .orderBook['data']['bids'].length,
-                          physics: const ClampingScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return Text(
-                              orderBookController.orderBook['data']['bids']
-                                      [index][0]
-                                  .toString(),
-                              style: GoogleFonts.poppins(
-                                color: colorRed,
-                              ),
-                            );
-                          },
-                        ),
-                      ),
+                  ),
+                  Text(
+                    'XHT Amount',
+                    style: GoogleFonts.poppins(
+                      color: colorGrey,
+                      fontSize: 15,
                     ),
-                  ],
+                  ),
+                ],
+              ),
+              Expanded(
+                child: SizedBox(
+                  child: ListView.builder(
+                    itemCount:
+                        orderBookController.orderBook['data']['bids'].length,
+                    itemBuilder: (context, index) {
+                      return Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            orderBookController.orderBook['data']['bids'][index]
+                                    [0]
+                                .toString(),
+                            style: GoogleFonts.poppins(
+                              color: colorRed,
+                            ),
+                          ),
+                          Text(
+                            orderBookController.orderBook['data']['bids'][index]
+                                    [1]
+                                .toString(),
+                            style: GoogleFonts.poppins(
+                              color: getWhiteBlackTextColor(),
+                            ),
+                          ),
+                        ],
+                      );
+                    },
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: SizedBox(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      'XHT Amount',
-                      style: GoogleFonts.poppins(
-                        color: colorGrey,
-                        fontSize: 15,
-                      ),
-                    ),
-                    Expanded(
-                      child: SizedBox(
-                        child: ListView.builder(
-                          controller: orderBookController.priceScrollController,
-                          itemCount: orderBookController
-                              .orderBook['data']['bids'].length,
-                          physics: const ClampingScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return Obx(
-                              () => Text(
-                                orderBookController.orderBook['data']['bids']
-                                        [index][1]
-                                    .toString(),
-                                style: GoogleFonts.poppins(
-                                  color: getWhiteBlackTextColor(),
-                                ),
-                                textAlign: TextAlign.end,
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );
