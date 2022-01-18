@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hollaex/Controllers/main_controller.dart';
 import 'package:hollaex/Controllers/orderbook_controller.dart';
-import 'package:hollaex/Globals/Constans/colors.dart';
+import 'package:hollaex/Globals/Constans/numbers.dart';
+import 'package:hollaex/Globals/Constans/paths.dart';
+import 'package:hollaex/Globals/Constans/strings.dart';
 import 'package:hollaex/Globals/Theme/theme.dart';
 
 class TopFilter extends StatelessWidget {
@@ -17,16 +19,17 @@ class TopFilter extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Order Book',
+            orderBookTitle,
             style: GoogleFonts.poppins(
               color: getWhiteBlackTextColor(),
-              fontSize: 15,
+              fontSize: middleTitleSize,
               fontWeight: FontWeight.bold,
             ),
           ),
           Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(
+                  filterAreaBorderRadiusValue),
               color: getBackgroundColor(),
             ),
             child: Padding(
@@ -41,12 +44,15 @@ class TopFilter extends StatelessWidget {
 
   Widget unSelectedfilterItem(String iconPath, int index) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+      padding: EdgeInsets.symmetric(
+        horizontal: filterAreaHorizontalPadding,
+        vertical: filterAreaVerticalPadding,
+      ),
       child: GestureDetector(
         onTap: () {
           orderBookController.filterIndex.value = index;
         },
-        child: SvgPicture.asset('assets/icons/$iconPath'),
+        child: SvgPicture.asset(iconPath),
       ),
     );
   }
@@ -54,16 +60,20 @@ class TopFilter extends StatelessWidget {
   Widget selectedFilterItem(String iconPath, int index) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(
+            filterAreaBorderRadiusValue),
         color: getFilterBgColor(),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+        padding: EdgeInsets.symmetric(
+          horizontal: filterAreaHorizontalPadding,
+          vertical: filterAreaVerticalPadding,
+        ),
         child: GestureDetector(
           onTap: () {
             orderBookController.filterIndex.value = index;
           },
-          child: SvgPicture.asset('assets/icons/$iconPath'),
+          child: SvgPicture.asset(iconPath),
         ),
       ),
     );
@@ -81,9 +91,9 @@ class TopFilter extends StatelessWidget {
     return Obx(
       () => Row(
         children: [
-          filterItem(0, 'justify.svg'),
-          filterItem(1, 'orderbuy.svg'),
-          filterItem(2, 'ordersell.svg'),
+          filterItem(0, justifyIconPath),
+          filterItem(1, orderBuyIconPath),
+          filterItem(2, orderSellIconPath),
         ],
       ),
     );

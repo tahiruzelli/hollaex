@@ -1,3 +1,6 @@
+import 'asks_model.dart';
+import 'bids_model.dart';
+
 class OrderBookModel {
   String topic;
   String action;
@@ -37,16 +40,16 @@ class Data {
 
   Data.fromJson(Map<String, dynamic> json) {
     if (json['bids'] != null) {
-      List bids = <Bids>[];
+       bids = <Bids>[];
       for (int i = 0; i < json['bids'].length; i++) {
         bids.add(Bids.fromJson(json['bids'][i]));
       }
     }
     if (json['asks'] != null) {
       asks = <Asks>[];
-      json['asks'].forEach((v) {
-        asks.add(Asks.fromJson(v));
-      });
+      for (int i = 0; i < json['asks'].length; i++) {
+        asks.add(Asks.fromJson(json['asks'][i]));
+      }
     }
     timestamp = json['timestamp'];
   }
@@ -64,40 +67,5 @@ class Data {
   }
 }
 
-class Bids {
-  double price;
-  double piece;
 
-  Bids({this.price, this.piece});
 
-  Bids.fromJson(Map<String, dynamic> json) {
-    price = json['price'];
-    piece = json['piece'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['price'] = price;
-    data['piece'] = piece;
-    return data;
-  }
-}
-
-class Asks {
-  double price;
-  int piece;
-
-  Asks({this.price, this.piece});
-
-  Asks.fromJson(Map<String, dynamic> json) {
-    price = json['price'];
-    piece = json['piece'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['price'] = price;
-    data['piece'] = piece;
-    return data;
-  }
-}

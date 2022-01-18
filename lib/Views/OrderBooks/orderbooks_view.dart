@@ -5,10 +5,12 @@ import 'package:get/get.dart';
 import 'package:hollaex/Controllers/main_controller.dart';
 import 'package:hollaex/Controllers/orderbook_controller.dart';
 import 'package:hollaex/Globals/Constans/colors.dart';
+import 'package:hollaex/Globals/Constans/numbers.dart';
 import 'package:hollaex/Globals/Constans/strings.dart';
 import 'package:hollaex/Globals/Theme/theme.dart';
 import 'package:hollaex/Globals/Widgets/my_appbar.dart';
 import 'package:hollaex/Globals/Widgets/my_snackbar.dart';
+import 'package:hollaex/Models/orderbook_model.dart';
 import 'package:hollaex/Views/OrderBooks/Pages/asks_view.dart';
 import 'package:hollaex/Views/OrderBooks/Pages/bids_asks_view.dart';
 import 'package:hollaex/Views/OrderBooks/Widgets/top_filter.dart';
@@ -24,7 +26,10 @@ class OrderBooksView extends StatelessWidget {
         backgroundColor: getBackgroundColor(),
         appBar: buildAppBar(mainController),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
+          padding: EdgeInsets.symmetric(
+            horizontal: pageHorizontalPadding,
+            vertical: pageVerticalPadding,
+          ),
           child: Container(
             height: Get.height,
             width: Get.width,
@@ -33,8 +38,10 @@ class OrderBooksView extends StatelessWidget {
               color: getCardColor(),
             ),
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
+              padding: EdgeInsets.symmetric(
+                horizontal: pageHorizontalPadding,
+                vertical: pageVerticalPadding,
+              ),
               child: Column(
                 children: [
                   TopFilter(),
@@ -46,8 +53,7 @@ class OrderBooksView extends StatelessWidget {
                             snapshot.data == welcomeMessage) {
                           return getPages();
                         } else {
-                          Map tmp = json.decode(snapshot.data);
-                          orderBookController.orderBook = tmp;
+                          orderBookController.modelData(snapshot);
                           return getPages();
                         }
                       } else {
@@ -76,8 +82,7 @@ class OrderBooksView extends StatelessWidget {
         } else if (orderBookController.filterIndex.value == 2) {
           return BidsView();
         } else {
-          warningSnackBar(
-              'Error', 'Something is wrong. Please restart the app');
+          warningSnackBar(errorTitle,restartAppMessage);
           return Container();
         }
       });

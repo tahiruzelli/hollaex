@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hollaex/Controllers/main_controller.dart';
 import 'package:hollaex/Globals/Constans/colors.dart';
+import 'package:hollaex/Globals/Constans/numbers.dart';
+import 'package:hollaex/Globals/Constans/strings.dart';
 
 buildAppBar(MainController mainController) {
   return PreferredSize(
@@ -15,12 +17,15 @@ buildAppBar(MainController mainController) {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(width: 25),
-            Text(
-              'HollaEx',
-              style: GoogleFonts.poppins(),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: mainAppbarTextPadding,
+              ),
+              child: Text(
+                mainAppbarText,
+                style: GoogleFonts.poppins(),
+              ),
             ),
-            const SizedBox(width: 10),
             Image.asset(
               'assets/images/hollaexIcon.png',
               height: 25,

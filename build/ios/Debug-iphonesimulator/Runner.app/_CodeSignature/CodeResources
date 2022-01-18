@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		EF2Uxsi6QSdYj/doFkFM4dzMqkg=
+		9/Z+T2Oko3CgKNEWmx2lZ+1nyEE=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,11 +118,11 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		qm1p1LEBkRLlZo6bQ2d7jZEfFf4=
+		7+zdVwq9pEU5nAwoVMr/CUTKax4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+		bCnwgN5MW8ysthOhauXDOsD+1RE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -130,7 +130,23 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		hNFz/Faq1nJQj2Xs3rRUT1XRtO0=
+		+3DqQ0V0k3I1Sf6M5QYCJUb+L7k=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/justify.svg</key>
+		<data>
+		gX9eScUuzgYCU0XN4gkgA1hut1A=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/orderbuy.svg</key>
+		<data>
+		7xOLJZKmARDNLex/vRybBA8AWJA=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/ordersell.svg</key>
+		<data>
+		R3P6av/to1UXnjH0I1wUot/uAeI=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/hollaexIcon.png</key>
+		<data>
+		W8g3SqFVeNS136et8JuXoujUpzM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -142,7 +158,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		Wp+6MJBB+nUquB6+1uYp/u2TqbQ=
+		VQZ8t6TXa9s0Etkrgf/4yuFOeEY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -250,7 +266,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		0JDLOO2rsZdhn7sxGGHDF+wum/Q=
+		yaaD3tZDffS3xuTmKoTwo3R+uaE=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -445,7 +461,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZGvtrblOHqTDzVwyGFKPcGqRkIZPAVTOxM6cCmdJ2YE=
+			5OPc1a+BnvX3siad5lQaxAwk9Yqh6rg0jUJ18WrIDpA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -459,14 +475,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yZXQbSG+fofFi6VuV6g/qmwz2oIFyfAojvLksaMMftI=
+			gNkZY/ZdA/NI8Efiz4E48OSKbbjTtd3jNzcgWm5tLP8=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sps95+7JukayebvM0TLjL1LW1VXXndpKp/O8tOm9ZR8=
+			1tjsL1PvcesnIVtJOrCH7hGdKtwmzWBfUYc57AG9TeI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -480,7 +496,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Fbp6TjQQp848QTVw740AgqQpeyr072YHiyMWQ+QDM7Y=
+			+NbWvcsItZ6q3FgBcanjK59PcWzed6wcHVo2gMHYl1Y=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/justify.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ao2lgl7JKRA0SR349bDAbk7FkvySh0TvDbV6/l4iBgc=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/orderbuy.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			hBHqff+1cNc3IVAh/jt51tl1h/Q3A/1ljLtL1Zv2k/c=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/icons/ordersell.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8NNdQlP5mthVrXUnvrLrMCcRg6Qs+/6z9iS7Mk9ccFk=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/hollaexIcon.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VObokC37smMUQhNqREzSS4/1WBTbDMEhnoVlNcvpMEY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -501,7 +545,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Si8iDaEnIWZIhtqFFzOaeFTONL1ftV+UIKXrJeRYTwM=
+			IOsoRjQcQ1bhg9cAAG7cOjK20baPWGI8phZ/rS0/SD0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

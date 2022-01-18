@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hollaex/Controllers/orderbook_controller.dart';
 import 'package:hollaex/Globals/Constans/colors.dart';
+import 'package:hollaex/Globals/Constans/numbers.dart';
+import 'package:hollaex/Globals/Constans/strings.dart';
 import 'package:hollaex/Globals/Theme/theme.dart';
 
 class BidsView extends StatelessWidget {
@@ -21,17 +23,17 @@ class BidsView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'XHT Price',
+                    xhtPrice,
                     style: GoogleFonts.poppins(
                       color: colorGrey,
-                      fontSize: 15,
+                      fontSize: middleTitleSize,
                     ),
                   ),
                   Text(
-                    'XHT Amount',
+                    xhtPrice,
                     style: GoogleFonts.poppins(
                       color: colorGrey,
-                      fontSize: 15,
+                      fontSize: middleTitleSize,
                     ),
                   ),
                 ],
@@ -39,23 +41,20 @@ class BidsView extends StatelessWidget {
               Expanded(
                 child: SizedBox(
                   child: ListView.builder(
-                    itemCount:
-                        orderBookController.orderBook['data']['bids'].length,
+                    itemCount: orderBookController.orderBook.data.bids.length,
                     itemBuilder: (context, index) {
                       return Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            orderBookController.orderBook['data']['bids'][index]
-                                    [0]
+                            orderBookController.orderBook.data.bids[index].price
                                 .toString(),
                             style: GoogleFonts.poppins(
                               color: colorRed,
                             ),
                           ),
                           Text(
-                            orderBookController.orderBook['data']['bids'][index]
-                                    [1]
+                            orderBookController.orderBook.data.bids[index].piece
                                 .toString(),
                             style: GoogleFonts.poppins(
                               color: getWhiteBlackTextColor(),
