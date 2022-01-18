@@ -9,10 +9,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const title = 'WebSocket Demo';
+    const title = 'HollaEx';
     return GetMaterialApp(
       title: title,
-      
+      debugShowCheckedModeBanner: false,
       home: OrderBooksView(),
     );
   }

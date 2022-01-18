@@ -12,11 +12,11 @@ class TopFilter extends StatelessWidget {
   MainController mainController = Get.find();
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Obx(
-          () => Text(
+    return Obx(
+      () => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
             'Order Book',
             style: GoogleFonts.poppins(
               color: getWhiteBlackTextColor(),
@@ -24,27 +24,30 @@ class TopFilter extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: colorBlack,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(3),
-            child: filters(),
-          ),
-        )
-      ],
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: getBackgroundColor(),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(3),
+              child: filters(),
+            ),
+          )
+        ],
+      ),
     );
   }
 
   Widget unSelectedfilterItem(String iconPath, int index) {
-    return GestureDetector(
-      onTap: () {
-        orderBookController.filterIndex.value = index;
-      },
-      child: SvgPicture.asset('assets/icons/$iconPath'),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+      child: GestureDetector(
+        onTap: () {
+          orderBookController.filterIndex.value = index;
+        },
+        child: SvgPicture.asset('assets/icons/$iconPath'),
+      ),
     );
   }
 
@@ -52,7 +55,7 @@ class TopFilter extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        color: colorGrey,
+        color: getFilterBgColor(),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
@@ -78,13 +81,9 @@ class TopFilter extends StatelessWidget {
     return Obx(
       () => Row(
         children: [
-          const SizedBox(width: 5),
           filterItem(0, 'justify.svg'),
-          const SizedBox(width: 10),
           filterItem(1, 'orderbuy.svg'),
-          const SizedBox(width: 10),
           filterItem(2, 'ordersell.svg'),
-          const SizedBox(width: 5),
         ],
       ),
     );

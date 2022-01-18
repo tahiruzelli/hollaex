@@ -27,3 +27,11 @@ Color getWhiteBlackTextColor(){
     return colorWhite;
   }
 }
+Color getFilterBgColor(){
+  if(mainController.isDarkMode.value){
+    return colorGrey;
+  }
+  else{
+    return colorWhite;
+  }
+}
