@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:hollaex/Controllers/main_controller.dart';
 import 'package:hollaex/Globals/Constans/colors.dart';
-MainController mainController =Get.find();
-Color getBackgroundColor(){
+
+Color getBackgroundColor(MainController mainController){
   if(mainController.isDarkMode.value){
     return colorBlack;
   }else{
     return colorScaffoldColor;
   }
 }
-Color getCardColor(){
+Color getCardColor(MainController mainController){
   if(mainController.isDarkMode.value){
     return colorDark;
   }
@@ -18,7 +17,7 @@ Color getCardColor(){
     return colorWhite;
   }
 }
-Color getWhiteBlackTextColor(){
+Color getWhiteBlackTextColor(MainController mainController){
   if(!mainController.isDarkMode.value){
     return Colors.black;
   }
@@ -26,7 +25,7 @@ Color getWhiteBlackTextColor(){
     return colorWhite;
   }
 }
-Color getFilterBgColor(){
+Color getFilterBgColor(MainController mainController){
   if(mainController.isDarkMode.value){
     return colorGrey;
   }

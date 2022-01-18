@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hollaex/Controllers/main_controller.dart';
@@ -19,9 +17,10 @@ class OrderBooksView extends StatelessWidget {
   MainController mainController = Get.put(MainController());
   @override
   Widget build(BuildContext context) {
+    mainController.reloadState();
     return Obx(
       () => Scaffold(
-        backgroundColor: getBackgroundColor(),
+        backgroundColor: getBackgroundColor(mainController),
         appBar: buildAppBar(mainController),
         body: Padding(
           padding: EdgeInsets.symmetric(
@@ -33,7 +32,7 @@ class OrderBooksView extends StatelessWidget {
             width: Get.width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: getCardColor(),
+              color: getCardColor(mainController),
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(
@@ -43,6 +42,7 @@ class OrderBooksView extends StatelessWidget {
               child: Column(
                 children: [
                   TopFilter(),
+                  SizedBox(height: pageHorizontalPadding),
                   StreamBuilder(
                     stream: orderBookController.hollaExChannel.stream,
                     builder: (context, snapshot) {
@@ -80,7 +80,7 @@ class OrderBooksView extends StatelessWidget {
         } else if (orderBookController.filterIndex.value == 2) {
           return BidsView();
         } else {
-          warningSnackBar(errorTitle,restartAppMessage);
+          warningSnackBar(errorTitle, restartAppMessage);
           return Container();
         }
       });

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hollaex/Controllers/main_controller.dart';
 import 'package:hollaex/Controllers/orderbook_controller.dart';
 import 'package:hollaex/Globals/Constans/colors.dart';
 import 'package:hollaex/Globals/Constans/numbers.dart';
@@ -9,12 +10,17 @@ import 'package:hollaex/Globals/Theme/theme.dart';
 
 class AsksView extends StatelessWidget {
   OrderBookController orderBookController = Get.find();
+  MainController mainController = Get.put(MainController());
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: GestureDetector(
         onTap: () {
-          orderBookController.filterIndex.value = 1;
+          if (orderBookController.filterIndex.value == 1) {
+            orderBookController.filterIndex.value = 0;
+          } else {
+            orderBookController.filterIndex.value = 1;
+          }
         },
         child: SizedBox(
           child: Column(
@@ -57,7 +63,7 @@ class AsksView extends StatelessWidget {
                             orderBookController.orderBook.data.asks[index].piece
                                 .toString(),
                             style: GoogleFonts.poppins(
-                              color: getWhiteBlackTextColor(),
+                              color: getWhiteBlackTextColor(mainController),
                             ),
                           ),
                         ],

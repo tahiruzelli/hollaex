@@ -21,7 +21,7 @@ class TopFilter extends StatelessWidget {
           Text(
             orderBookTitle,
             style: GoogleFonts.poppins(
-              color: getWhiteBlackTextColor(),
+              color: getWhiteBlackTextColor(mainController),
               fontSize: middleTitleSize,
               fontWeight: FontWeight.bold,
             ),
@@ -30,7 +30,7 @@ class TopFilter extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(
                   filterAreaBorderRadiusValue),
-              color: getBackgroundColor(),
+              color: getBackgroundColor(mainController),
             ),
             child: Padding(
               padding: const EdgeInsets.all(3),
@@ -62,7 +62,7 @@ class TopFilter extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(
             filterAreaBorderRadiusValue),
-        color: getFilterBgColor(),
+        color: getFilterBgColor(mainController),
       ),
       child: Padding(
         padding: EdgeInsets.symmetric(

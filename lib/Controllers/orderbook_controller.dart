@@ -13,8 +13,6 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 class OrderBookController extends GetxController {
   IOWebSocketChannel hollaExChannel;
 
-
-
   RxInt filterIndex = 0.obs;
 
   OrderBookModel orderBook;
