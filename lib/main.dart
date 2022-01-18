@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:hollaex/Views/OrderBooks/orderbooks_view.dart';
-
 import 'Globals/Constans/strings.dart';
 
 void main() => runApp(const MyApp());

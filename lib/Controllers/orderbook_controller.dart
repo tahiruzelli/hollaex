@@ -13,7 +13,7 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 class OrderBookController extends GetxController {
   IOWebSocketChannel hollaExChannel;
 
-  TextEditingController controller = TextEditingController();
+
 
   RxInt filterIndex = 0.obs;
 
@@ -52,6 +52,5 @@ class OrderBookController extends GetxController {
     // TODO: implement onClose
     super.onClose();
     hollaExChannel.sink.close();
-    controller.dispose();
   }
 }
